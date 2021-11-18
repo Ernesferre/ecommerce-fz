@@ -62,25 +62,29 @@ const BannerSlide = () => {
 
   const images = [Banner_1, Banner_2, Banner_3, Banner_4];
 
-  console.log(banners);
-  console.log(images);
+  // console.log(banners);
+  // console.log(images);
 
   const [href] = banners;
-  console.log(href);
+  // console.log(href);
 
   return (
     <>
       <Slider {...settings}>
         {images.map((slide, index) => (
-          <Link href={slide.href} color="black">
+          <Link
+            Key={index}
+            href={href}
+            // color="black"
+          >
             <Img
               key={index}
               src={slide}
               alt="Banner"
-              href={href}
-              objectFit="cover"
-              h="400px"
-              w="1280px"
+              // href={href}
+              objectFit={["fill", "cover"]}
+              h={["160px", "400px"]}
+              w={["360px", "1280px"]}
             />
             {slide.imgName}
           </Link>
@@ -91,52 +95,3 @@ const BannerSlide = () => {
 };
 
 export default BannerSlide;
-
-{
-  /* <Box>
-        <Slider {...settings}>
-          <Box
-            h="400px"
-            w="1280px"
-            bg="orange"
-            textAlign="center"
-            color="black"
-          >
-            <Img
-              src={Banner_1}
-              alt="Banner"
-              objectFit="cover"
-              h="100%"
-              w="1280px"
-            />
-          </Box>
-          <Box height="400px" bg="orange" textAlign="center" color="black">
-            <Img
-              src={Banner_2}
-              alt="Banner"
-              objectFit="cover"
-              h="100%"
-              w="1280px"
-            />
-          </Box>
-          <Box height="400px" bg="orange" textAlign="center" color="black">
-            <Img
-              src={Banner_3}
-              alt="Banner"
-              objectFit="cover"
-              h="100%"
-              w="1280px"
-            />
-          </Box>
-          <Box height="400px" bg="orange" textAlign="center" color="black">
-            <Img
-              src={Banner_4}
-              alt="Banner"
-              objectFit="cover"
-              h="100%"
-              w="1280px"
-            />
-          </Box>
-        </Slider>
-      </Box> */
-}

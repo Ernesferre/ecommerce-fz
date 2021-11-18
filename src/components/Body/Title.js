@@ -4,7 +4,7 @@ import React from "react";
 const Title = () => {
   return (
     <>
-      <VStack display="flex" spacing={-6}>
+      <VStack display="flex" w="360px" spacing={-6}>
         <Box
           bg="white"
           w="220px"
@@ -15,15 +15,14 @@ const Title = () => {
           textAlign="center"
           fontWeight="bold"
           fontFamily="Open Sans"
-          fontSize="36px"
+          fontSize={["30px", "36px"]}
           zIndex="1"
         >
           Productos
         </Box>
 
         <Box
-          w="96%"
-          // h="0.5px"
+          w="320px"
           mx="auto"
           borderColor="brand.gray2"
           borderWidth="0.5px"

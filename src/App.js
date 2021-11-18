@@ -13,6 +13,17 @@ function App() {
   const [filters, setFilters] = useState([]);
   const [Checked, setChecked] = useState([]);
 
+  useEffect(() => {
+    fetch("http://remote.fizzmod.com/body.json")
+      .then((res) => res.json())
+      .then((res) => setFilters(res.filters))
+      .catch((err) => console.log(err));
+  }, []);
+
+  console.log(filters);
+
+  const [brand, category] = filters;
+
   const handleToggle = (value) => {
     const currentIndex = Checked.indexOf(value);
     const newChecked = [...Checked];
@@ -26,23 +37,18 @@ function App() {
     setChecked(newChecked);
   };
 
-  useEffect(() => {
-    fetch("http://remote.fizzmod.com/body.json")
-      .then((res) => res.json())
-      .then((res) => setFilters(res.filters));
-  }, []);
-
-  console.log(filters);
-
-  const [brand, category] = filters;
-
   return (
     <ChakraProvider theme={theme}>
       <Box mx="auto" w="1280px">
         <Header />
         <BannerSlide />
         <Title />
-        <HStack justifyContent="space-between" alignItems="flex-start" bg="">
+        <HStack
+          justifyContent="space-between"
+          alignItems="flex-start"
+          flexDirection="row"
+          // bg=""
+        >
           <LeftBar
             brand={brand}
             category={category}

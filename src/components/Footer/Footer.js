@@ -12,6 +12,7 @@ const Footer = () => {
       color="white"
       position="relative"
       alignContent="center"
+      fontFamily="Open Sans"
     >
       <HStack spacing="83px" alignItems="flex-start">
         <Box>
@@ -20,7 +21,7 @@ const Footer = () => {
             mb="5px"
             fontWeight="bold"
             fontSize="12px"
-            letterSpacing="2px"
+            letterSpacing="1px"
           >
             PRODUCTOS
           </Text>
@@ -48,7 +49,7 @@ const Footer = () => {
             mb="5px"
             fontWeight="bold"
             fontSize="12px"
-            letterSpacing="2px"
+            letterSpacing="1px"
           >
             MI CUENTA
           </Text>
@@ -76,7 +77,7 @@ const Footer = () => {
             mb="5px"
             fontWeight="bold"
             fontSize="12px"
-            letterSpacing="2px"
+            letterSpacing="1px"
           >
             CONTACTANOS
           </Text>
