@@ -7,10 +7,12 @@ const Footer = () => {
     <Box
       h="320px"
       pt="55px"
-      pl="230px"
+      pl={["0px", "230px"]}
       bg="brand.bgFooter"
       color="white"
-      position="relative"
+      ml="-288px"
+      // position={["relative", "relative"]}
+      // top={["0rem", "0px"]}
       alignContent="center"
       fontFamily="Open Sans"
     >

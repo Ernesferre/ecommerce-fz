@@ -24,8 +24,6 @@ const Header = () => {
       .then((res) => setCategory(res.menu.categories));
   }, []);
 
-  console.log(category);
-
   return (
     <>
       {/* DESKTOP LAYOUT */}
@@ -34,46 +32,36 @@ const Header = () => {
         display={["none", "flex"]}
         flexDirection="column"
         justifyContent="space-between"
-        w="1280px"
+        w={["360px", "1280px"]}
         h="146px"
-        bg="white"
-        color="black"
-        textAlign="center"
       >
         <Grid
           h="90px"
-          color="gray"
           templateRows="repeat(3, 1fr)"
           templateColumns="repeat(5, 1fr)"
-          gap={0}
         >
           <GridItem
+            d="flex"
             rowSpan={3}
             colSpan={1}
             bg="brand.gray1"
+            justifyContent="center"
             alignItems="center"
-            textAlign="center"
-            pt="20px"
           >
-            <Box display="flex" justifyContent="center" alignItems="center">
-              <Img src={logo} alt="logo" />
-            </Box>
+            <Img src={logo} alt="logo" />
           </GridItem>
 
-          <GridItem colSpan={3} bg="white" />
-          <GridItem colSpan={1} bg="white">
+          <GridItem colSpan={3} />
+          <GridItem colSpan={1}>
             <HStack
-              spacing={4}
               color="brand.bgCategory"
               justifyContent="space-around"
               fontFamily="open sans"
               fontSize="13px"
-              fontWeight="bold"
+              // fontWeight="bold"
               py="5px"
             >
-              <Link to="#" h="18px">
-                Ayuda
-              </Link>
+              <Link to="#">Ayuda</Link>
               <Link to="#">Mis pedidos</Link>
               <Link to="#">Mi cuenta</Link>
             </HStack>
@@ -81,19 +69,12 @@ const Header = () => {
           <GridItem
             colSpan={3}
             rowSpan={2}
-            bg="white"
             borderTop="1px"
             borderColor="brand.gray1"
           >
-            <HStack
-              spacing={2}
-              ml={4}
-              pt="12px"
-              alignItems="flex-end"
-              color="brand.gray2"
-            >
+            <HStack ml={4} pt="14px" color="brand.gray2">
               <BiSearch size="26px" w="22.03px" h="22.96px" />
-              <Text w="202px" fontSize="20px" color="brand.gray2">
+              <Text w="202px" fontSize="20px">
                 Buscar un producto...
               </Text>
             </HStack>
@@ -102,7 +83,6 @@ const Header = () => {
             <HStack
               spacing={4}
               mx="auto"
-              alignItems="center"
               pt="30px"
               w="132px"
               h="25px"
@@ -122,7 +102,7 @@ const Header = () => {
           </GridItem>
         </Grid>
 
-        <Box bg="brand.bgCategory" h="56px" pt="16px">
+        <Box bg="brand.bgCategory" h="56px">
           <UnorderedList
             display="flex"
             justifyContent="space-around"
@@ -131,6 +111,7 @@ const Header = () => {
             fontFamily="open sans"
             fontWeight="bold"
             fontSize="14px"
+            pt="18px"
           >
             {category.map((cat, index) => (
               <ListItem key={index} as="a" href={cat.href}>

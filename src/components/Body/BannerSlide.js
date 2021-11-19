@@ -1,6 +1,5 @@
-import { Box, Link } from "@chakra-ui/layout";
+import { Box } from "@chakra-ui/layout";
 import { Img } from "@chakra-ui/image";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -20,7 +19,7 @@ const BannerSlide = () => {
         color="white"
         onClick={onClick}
         position="absolute"
-        top="180px"
+        top={["40px", "180px"]}
         right="20px"
       >
         <IoIosArrowForward size="40px" />
@@ -34,7 +33,7 @@ const BannerSlide = () => {
         color="white"
         onClick={onClick}
         position="absolute"
-        top="180px"
+        top={["40px", "180px"]}
         left="20px"
         zIndex="1"
       >
@@ -55,39 +54,28 @@ const BannerSlide = () => {
   };
 
   useEffect(() => {
-    axios
-      .get("http://remote.fizzmod.com/body.json")
-      .then((res) => setBanners(res.data.slides));
+    fetch("http://remote.fizzmod.com/body.json")
+      .then((res) => res.json())
+      .then((res) => setBanners(res.slides))
+      .catch((err) => console.log(err));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const images = [Banner_1, Banner_2, Banner_3, Banner_4];
-
-  // console.log(banners);
-  // console.log(images);
-
-  const [href] = banners;
-  // console.log(href);
 
   return (
     <>
       <Slider {...settings}>
         {images.map((slide, index) => (
-          <Link
-            Key={index}
-            href={href}
-            // color="black"
-          >
-            <Img
-              key={index}
-              src={slide}
-              alt="Banner"
-              // href={href}
-              objectFit={["fill", "cover"]}
-              h={["160px", "400px"]}
-              w={["360px", "1280px"]}
-            />
-            {slide.imgName}
-          </Link>
+          <Img
+            key={index}
+            src={slide}
+            size="100%"
+            cursor="pointer"
+            objectFit={["fill", "cover"]}
+            h={["120px", "400px"]}
+            w={["360px", "1280px"]}
+          />
         ))}
       </Slider>
     </>

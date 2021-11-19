@@ -8,12 +8,22 @@ import manteca from "../../assets/imgProductos/manteca.jpg";
 
 const Card = ({ title, image, listPrice, sellingPrice, href }) => {
   return (
-    <Link href={href} h="312px" w="210px" bg="white">
+    <Link
+      href={href}
+      h="312px"
+      w="210px"
+      color="black"
+      _hover={{
+        color: "brand.bgCategory",
+        fontWeight: "bold",
+      }}
+    >
       {(sellingPrice / listPrice - 1) * 100 < 0 ? (
         <Box
           display="flex"
           justifyContent="center"
           alignItems="center"
+          color="white"
           w="46px"
           h="46px"
           borderRadius="full"
@@ -28,26 +38,14 @@ const Card = ({ title, image, listPrice, sellingPrice, href }) => {
       ) : null}
 
       {image === "atun" ? (
-        <Img
-          src={atun}
-          alt="imagen"
-          w="210px"
-          h="210px"
-          pt="18.58px"
-          pb="19.52px"
-          pl="20.44px"
-          pr="17.66px"
-        />
+        <Img src={atun} w="210px" h="210px" p="18px 17px 19px 18px" />
       ) : image === "cebolla" ? (
         <Img
           src={cebolla}
           alt="imagen"
           w="210px"
           h="210px"
-          pt="18.58px"
-          pb="19.52px"
-          pl="20.44px"
-          pr="17.66px"
+          p="18px 17px 19px 18px"
         />
       ) : image === "galletitas" ? (
         <Img
@@ -55,10 +53,7 @@ const Card = ({ title, image, listPrice, sellingPrice, href }) => {
           alt="imagen"
           w="210px"
           h="210px"
-          pt="18.58px"
-          pb="19.52px"
-          pl="20.44px"
-          pr="17.66px"
+          p="18px 17px 19px 18px"
         />
       ) : image === "manteca" ? (
         <Img
@@ -66,15 +61,11 @@ const Card = ({ title, image, listPrice, sellingPrice, href }) => {
           alt="imagen"
           w="210px"
           h="210px"
-          pt="18.58px"
-          pb="19.52px"
-          pl="20.44px"
-          pr="17.66px"
+          p="18px 17px 19px 18px"
         />
       ) : null}
 
       <Text
-        color="black"
         textAlign="center"
         mx="auto"
         fontFamily="Open Sans"
@@ -84,7 +75,12 @@ const Card = ({ title, image, listPrice, sellingPrice, href }) => {
         {title}
       </Text>
 
-      <VStack display="flex" spacing={3}>
+      <VStack
+        display="flex"
+        spacing={3}
+        textAlign="center"
+        fontFamily="open sans"
+      >
         {listPrice === sellingPrice ? (
           <Text h="9.28px" mt="30px">
             {" "}
@@ -92,9 +88,7 @@ const Card = ({ title, image, listPrice, sellingPrice, href }) => {
         ) : (
           <Text
             as="s"
-            textAlign="center"
             color="brand.gray2"
-            fontFamily="open sans"
             fontSize="13px"
             w="37px"
             h="9.28px"
@@ -106,9 +100,7 @@ const Card = ({ title, image, listPrice, sellingPrice, href }) => {
 
         <Text
           color="brand.bgCategory"
-          textAlign="center"
           mx="auto"
-          fontFamily="open sans"
           fontWeight="bold"
           fontSize="18px"
           w="51px"

@@ -16,7 +16,6 @@ import React, { useState } from "react";
 import { Input, InputGroup, InputLeftAddon } from "@chakra-ui/input";
 
 const MobileHeader = ({ category }) => {
-  console.log(category);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => {
@@ -55,11 +54,16 @@ const MobileHeader = ({ category }) => {
         color="brand.gray2"
         spacing="0"
       >
-        <InputGroup>
+        <InputGroup color="black">
           <InputLeftAddon bg="">
             <BiSearch />
           </InputLeftAddon>
-          <Input type="tel" value="Buscar un producto..." />
+          <Input
+            color="black"
+            type="text"
+            // value="Buscar un producto..."
+            placeholder="Buscar un producto..."
+          />
         </InputGroup>
       </Stack>
       <HStack
@@ -81,7 +85,7 @@ const MobileHeader = ({ category }) => {
             position="absolute"
             top="100px"
             left="0px"
-            zIndex="1"
+            zIndex="2"
           >
             <Box p="10px" mb="15px">
               <AiOutlineClose onClick={handleOpen} size="25px" />

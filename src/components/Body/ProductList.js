@@ -1,5 +1,6 @@
 import { Box, Flex } from "@chakra-ui/layout";
 import React, { useEffect, useState } from "react";
+import Footer from "../Footer/Footer";
 import Card from "./Card";
 
 const ProductList = ({ Checked }) => {
@@ -14,11 +15,8 @@ const ProductList = ({ Checked }) => {
 
   useEffect(() => {
     if (Checked.length !== 0) {
-      // console.log(Checked.length);
-      // console.log("Entra en el if");
       let articulosFiltrados = [];
       for (let value of Checked) {
-        // console.log(value);
         const MarcaFiltrada = products.filter(
           (product) => product.attributes[0].value === value
         );
@@ -33,23 +31,19 @@ const ProductList = ({ Checked }) => {
         ];
       }
       setRenderProducts(articulosFiltrados);
-      // console.log("Articulos filtrados:", renderProducts);
     } else {
       fetch("http://remote.fizzmod.com/body.json")
         .then((res) => res.json())
         .then((res) => setRenderProducts(res.products));
-      // .then(() => console.log("paso por aca:", products));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Checked]);
-
-  // console.log(products);
-  // console.log(Checked);
 
   const ProductsToRender = () => {
     let output = renderProducts.length ? renderProducts : products;
 
     return output.map((product) => (
-      <Flex key={product.id} my="5" mt="0">
+      <Flex key={product.id} my="5" mx="auto" mt="0">
         <Card
           title={product.title}
           image={product.image.slice(0, -4)}
@@ -62,10 +56,21 @@ const ProductList = ({ Checked }) => {
   };
 
   return (
-    <Box bg="" w="992px" h="800px">
-      <Flex flexWrap="wrap" mt="70px" justifyContent="space-around">
+    <Box
+      // bg="orange"
+      w={["360px", "992px"]}
+      h={["360px", "800px"]}
+      position="relative"
+    >
+      <Flex
+        flexWrap="wrap"
+        flexDirection={["column", "row"]}
+        mt={["10px", "70px"]}
+        justifyContent="space-around"
+      >
         {ProductsToRender()}
       </Flex>
+      <Footer />
     </Box>
   );
 };

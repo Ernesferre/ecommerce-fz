@@ -6,7 +6,7 @@ import LeftBar from "./components/Body/LeftBar";
 import ProductList from "./components/Body/ProductList";
 import Footer from "./components/Footer/Footer";
 import { theme } from "./resources/theme/index";
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, Stack } from "@chakra-ui/react";
 import Title from "./components/Body/Title";
 
 function App() {
@@ -19,8 +19,6 @@ function App() {
       .then((res) => setFilters(res.filters))
       .catch((err) => console.log(err));
   }, []);
-
-  console.log(filters);
 
   const [brand, category] = filters;
 
@@ -39,15 +37,14 @@ function App() {
 
   return (
     <ChakraProvider theme={theme}>
-      <Box mx="auto" w="1280px">
+      <Box mx="auto" w={["360px", "1280px"]}>
         <Header />
         <BannerSlide />
         <Title />
-        <HStack
+        <Stack
           justifyContent="space-between"
           alignItems="flex-start"
-          flexDirection="row"
-          // bg=""
+          flexDirection={["column", "row"]}
         >
           <LeftBar
             brand={brand}
@@ -55,8 +52,8 @@ function App() {
             handleToggle={handleToggle}
           />
           <ProductList Checked={Checked} />
-        </HStack>
-        <Footer />
+          {/* <Footer /> */}
+        </Stack>
       </Box>
     </ChakraProvider>
   );

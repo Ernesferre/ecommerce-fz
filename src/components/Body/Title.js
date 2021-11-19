@@ -4,7 +4,7 @@ import React from "react";
 const Title = () => {
   return (
     <>
-      <VStack display="flex" w="360px" spacing={-6}>
+      <VStack d="flex" w={["360px, 600px"]} spacing={-6}>
         <Box
           bg="white"
           w="220px"
@@ -22,7 +22,7 @@ const Title = () => {
         </Box>
 
         <Box
-          w="320px"
+          w={["320px", "1200px"]}
           mx="auto"
           borderColor="brand.gray2"
           borderWidth="0.5px"
