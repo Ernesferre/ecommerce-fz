@@ -1,32 +1,33 @@
-import { Box, HStack, VStack, Link, Text, Spacer } from "@chakra-ui/layout";
+import { Box, Link, Text, VStack, HStack } from "@chakra-ui/layout";
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 import React from "react";
-import MobileFooter from "./MobileFooter";
 
-const Footer = () => {
+const MobileFooter = () => {
   return (
-    <>
-      <Box
-        d={["none", "flex"]}
-        h="320px"
-        pt="55px"
-        pl={["0px", "230px"]}
-        bg="brand.bgFooter"
-        color="white"
-        ml={["-288px", "-288px"]}
-        mt="60px"
-        position={["relative", "relative"]}
-        // top={["0rem", "0px"]}
-        alignContent="center"
-        fontFamily="Open Sans"
-      >
-        <HStack spacing="83px" alignItems="flex-start">
+    <VStack
+      bg="brand.bgFooter"
+      color="white"
+      h="300px"
+      w="full"
+      pt="30px"
+      spacing="50px"
+    >
+      <VStack>
+        <HStack spacing={6} position="absolute" cursor="pointer">
+          <FaFacebookF />
+          <FaTwitter />
+          <FaYoutube />
+        </HStack>
+      </VStack>
+
+      <HStack mt="10px" spacing="2px">
+        <VStack>
           <Box>
             <Text
               textAlign="left"
               mb="5px"
               fontWeight="bold"
-              fontSize="12px"
+              fontSize="10px"
               letterSpacing="1px"
             >
               PRODUCTOS
@@ -35,8 +36,8 @@ const Footer = () => {
             <hr />
 
             <VStack
-              w="127px"
-              h="117px"
+              w="90px"
+              h="140px"
               alignItems="flex-start"
               mt="20px"
               fontWeight="light"
@@ -49,12 +50,15 @@ const Footer = () => {
               <Link href="#?">Sin Stock</Link>
             </VStack>
           </Box>
+        </VStack>
+
+        <VStack>
           <Box>
             <Text
               textAlign="left"
               mb="5px"
               fontWeight="bold"
-              fontSize="12px"
+              fontSize="10px"
               letterSpacing="1px"
             >
               MI CUENTA
@@ -63,8 +67,8 @@ const Footer = () => {
             <hr />
 
             <VStack
-              w="127px"
-              h="117px"
+              w="90px"
+              h="140px"
               alignItems="flex-start"
               mt="20px"
               fontWeight="light"
@@ -77,12 +81,15 @@ const Footer = () => {
               <Link href="#?">Mis recetas</Link>
             </VStack>
           </Box>
+        </VStack>
+
+        <VStack>
           <Box>
             <Text
               textAlign="left"
               mb="5px"
               fontWeight="bold"
-              fontSize="12px"
+              fontSize="10px"
               letterSpacing="1px"
             >
               CONTACTANOS
@@ -91,8 +98,8 @@ const Footer = () => {
             <hr />
 
             <VStack
-              w="127px"
-              h="117px"
+              w="90px"
+              h="140px"
               alignItems="flex-start"
               mt="20px"
               fontWeight="light"
@@ -102,27 +109,10 @@ const Footer = () => {
               <Link href="#?">Horarios y Teléfonos</Link>
             </VStack>
           </Box>
-
-          <Spacer></Spacer>
-
-          <HStack
-            spacing={6}
-            position="absolute"
-            right="230px"
-            cursor="pointer"
-          >
-            <FaFacebookF />
-            <FaTwitter />
-            <FaYoutube />
-          </HStack>
-        </HStack>
-      </Box>
-
-      <Box display={["flex", "none"]}>
-        <MobileFooter />
-      </Box>
-    </>
+        </VStack>
+      </HStack>
+    </VStack>
   );
 };
 
-export default Footer;
+export default MobileFooter;

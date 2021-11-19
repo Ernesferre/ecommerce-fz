@@ -4,7 +4,6 @@ import BannerSlide from "./components/Body/BannerSlide";
 import Header from "./components/Header/Header";
 import LeftBar from "./components/Body/LeftBar";
 import ProductList from "./components/Body/ProductList";
-import Footer from "./components/Footer/Footer";
 import { theme } from "./resources/theme/index";
 import { Box, Stack } from "@chakra-ui/react";
 import Title from "./components/Body/Title";

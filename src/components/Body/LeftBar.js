@@ -2,23 +2,26 @@ import { Checkbox } from "@chakra-ui/checkbox";
 import { Box, Text, VStack, Stack } from "@chakra-ui/layout";
 
 const LeftBar = ({ brand, category, handleToggle }) => {
-  // console.log("Category:", category);
-  // console.log("Brand:", brand);
-
   return (
     <>
       <Stack ml="1rem" flexDirection={["row", "column"]} fontFamily="Open Sans">
         <Box
-          bg={["gray.200", "white"]}
-          color="black"
+          bg={["brand.bgFooter", "white"]}
+          color={["white", "black"]}
           w={["150px", "210px"]}
           borderRadius="10px"
-          h={["190px", "183px"]}
+          h={["199px", "183px"]}
           mt="70px"
           pl="3px"
           mb="2rem"
         >
-          <Text mb="1rem" fontSize="18px" pt="7px" pl="4px" fontWeight="light">
+          <Text
+            mb="1rem"
+            fontSize={["16px", "18px"]}
+            pt="7px"
+            fontWeight="light"
+            textAlign={["center", "left"]}
+          >
             Filtrar por Marca
           </Text>
 
@@ -49,18 +52,25 @@ const LeftBar = ({ brand, category, handleToggle }) => {
           </VStack>
         </Box>
         <Box
-          bg={["gray.200", "white"]}
-          color="black"
+          bg={["brand.bgFooter", "white"]}
+          color={["white", "black"]}
           borderRadius="10px"
           w={["170px", "210px"]}
-          h={["190px", "183px"]}
+          h={["200px", "183px"]}
           position={["absolute", "relative"]}
-          top={["24rem", "0"]}
+          top={["365px", "0"]}
           left={["11rem", "0"]}
           mt={["10rem", "4rem"]}
           mb="2rem"
         >
-          <Text mb="1rem" pl="2px" pt="6px" fontSize="18px" fontWeight="light">
+          <Text
+            mb="1rem"
+            pl="2px"
+            pt="6px"
+            fontSize={["16px", "18px"]}
+            fontWeight="light"
+            textAlign={["center", "left"]}
+          >
             Filtrar por Categoria
           </Text>
           <Box

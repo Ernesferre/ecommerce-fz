@@ -4,7 +4,7 @@ import React from "react";
 const Title = () => {
   return (
     <>
-      <VStack d="flex" w={["360px, 600px"]} spacing={-6}>
+      <VStack d="flex" w={["360px, 600px"]} spacing={["-30px", "-20px"]}>
         <Box
           bg="white"
           w="220px"
@@ -15,7 +15,7 @@ const Title = () => {
           textAlign="center"
           fontWeight="bold"
           fontFamily="Open Sans"
-          fontSize={["30px", "36px"]}
+          fontSize={["25px", "36px"]}
           zIndex="1"
         >
           Productos

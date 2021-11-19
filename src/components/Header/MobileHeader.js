@@ -61,15 +61,15 @@ const MobileHeader = ({ category }) => {
           <Input
             color="black"
             type="text"
-            // value="Buscar un producto..."
             placeholder="Buscar un producto..."
           />
         </InputGroup>
       </Stack>
       <HStack
         justify="space-between"
-        p="10px"
-        h="50px"
+        pl="30px"
+        pr="30px"
+        h="40px"
         color="white"
         bg="brand.bgCategory"
         w="360px"
@@ -97,8 +97,8 @@ const MobileHeader = ({ category }) => {
               textAlign="left"
             >
               {category.map((cat, index) => (
-                <VStack d="flex" alignItems="flex-start">
-                  <ListItem key={index} as="a" href={cat.href} mb="20px">
+                <VStack key={index} d="flex" alignItems="flex-start">
+                  <ListItem as="a" href={cat.href} mb="20px">
                     {cat.title}
                   </ListItem>
                 </VStack>
