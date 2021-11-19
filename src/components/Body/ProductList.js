@@ -23,7 +23,6 @@ const ProductList = ({ Checked }) => {
         const CategoriaFiltrada = products.filter(
           (product) => product.attributes[1].value === value
         );
-
         articulosFiltrados = [
           ...articulosFiltrados,
           ...MarcaFiltrada,
@@ -56,12 +55,7 @@ const ProductList = ({ Checked }) => {
   };
 
   return (
-    <Box
-      // bg="orange"
-      w={["360px", "992px"]}
-      h={["360px", "800px"]}
-      position="relative"
-    >
+    <Box w={["360px", "992px"]} h={["360px", "800px"]} position="relative">
       <Flex
         flexWrap="wrap"
         flexDirection={["column", "row"]}

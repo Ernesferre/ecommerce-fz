@@ -51,7 +51,6 @@ function App() {
             handleToggle={handleToggle}
           />
           <ProductList Checked={Checked} />
-          {/* <Footer /> */}
         </Stack>
       </Box>
     </ChakraProvider>

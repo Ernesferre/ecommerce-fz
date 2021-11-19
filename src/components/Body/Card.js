@@ -40,29 +40,11 @@ const Card = ({ title, image, listPrice, sellingPrice, href }) => {
       {image === "atun" ? (
         <Img src={atun} w="210px" h="210px" p="18px 17px 19px 18px" />
       ) : image === "cebolla" ? (
-        <Img
-          src={cebolla}
-          alt="imagen"
-          w="210px"
-          h="210px"
-          p="18px 17px 19px 18px"
-        />
+        <Img src={cebolla} w="210px" h="210px" p="18px 17px 19px 18px" />
       ) : image === "galletitas" ? (
-        <Img
-          src={galletitas}
-          alt="imagen"
-          w="210px"
-          h="210px"
-          p="18px 17px 19px 18px"
-        />
+        <Img src={galletitas} w="210px" h="210px" p="18px 17px 19px 18px" />
       ) : image === "manteca" ? (
-        <Img
-          src={manteca}
-          alt="imagen"
-          w="210px"
-          h="210px"
-          p="18px 17px 19px 18px"
-        />
+        <Img src={manteca} w="210px" h="210px" p="18px 17px 19px 18px" />
       ) : null}
 
       <Text
